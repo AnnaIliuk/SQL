@@ -125,7 +125,9 @@ insert into salary (id, monthly_salary) values
 - salary_id. Int, not null
 	2.	Наполнить таблицу employee_salary 40 строками:- в 10 строк из 40 вставить несуществующие employee_id
 
-|id|employee_id|salary_id|
+
+| id |  employee_id  |  salary_id  |
+|----|---------------|-------------|
 1	3	7
 2	1	4
 3	5	9
@@ -227,7 +229,7 @@ create table roles(
         id serial primary key,
         role_name int not null unique
 );
-select * from roles;	      
+      
 
 alter table roles 
 alter column role_name type varchar(30);
