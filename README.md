@@ -9,7 +9,7 @@ SQL_DDLПервая часть.
 	1.	Создать таблицу employees- id. serial,  primary key,- employee_name. Varchar(50), not null  
 	2.	Наполнить таблицу employee 70 строками  
 
-
+```
 create table employees (  
 		id serial primary key,  
 		employee_name varchar(50) not null  
@@ -31,7 +31,7 @@ insert into employees (id, employee_name) values
 	(13, 'Tolya'), 
 	(14, 'Anna'),
 	(15, 'Nika'),
-  (16, 'Anna'),
+        (16, 'Anna'),
 	(17, 'Katya'),
 	(18, 'Sonya'),
 	(19, 'Oleg'), 
@@ -46,7 +46,7 @@ insert into employees (id, employee_name) values
 	(28, 'Tolya'), 
 	(29, 'Anna'),
 	(30, 'Nika'),
-  (31, 'Anna'),
+        (31, 'Anna'),
 	(32, 'Katya'),
 	(33, 'Sonya'),
 	(34, 'Oleg'), 
@@ -61,8 +61,8 @@ insert into employees (id, employee_name) values
 	(43, 'Tolya'), 
 	(44, 'Anna'),
 	(45, 'Nika'),
-    (46, 'Anna'),
-	(47, 'Katya'),
+        (46, 'Anna'),
+ 	(47, 'Katya'),
 	(48, 'Sonya'),
 	(49, 'Oleg'), 
 	(50, 'Roma'), 
@@ -71,7 +71,7 @@ insert into employees (id, employee_name) values
 	(53, 'Sonya'), 
 	(54, 'Pasha'),
 	(55, 'Tanya'),
-  (56, 'Dima'), 
+        (56, 'Dima'), 
 	(57, 'Vera'),
 	(58, 'Tolya'), 
 	(59, 'Anna'),
@@ -86,7 +86,7 @@ insert into employees (id, employee_name) values
 	(68, 'Tolya'), 
 	(69, 'Anna'),
 	(70, 'Nika');
-
+```
 
 **Таблица salary**
 
