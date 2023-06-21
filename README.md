@@ -199,9 +199,10 @@ insert into employee_salary(id,employee_id,salary_id) values
 	2.	Поменять тип столба role_name с int на varchar(30)
 	3.	Наполнить таблицу roles 20 строками:
 
-|id|role_nameJunior Python developer|
-|2|Middle Python developer|
-|3|Senior Python developer|
+| id | role_nameJunior Python developer|
+|----|---------------------------------|
+| 2  |    Middle Python developer      |
+| 3  |    Senior Python developer      |
 |4|Junior Java developer|
 |5|Middle Java developer|
 |6|Senior Java developer|
