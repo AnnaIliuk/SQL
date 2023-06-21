@@ -191,60 +191,34 @@ insert into employee_salary(id,employee_id,salary_id) values
 	         (36,99,99),
 	         (37,65,65),
 	         (38,56,67);
-	        
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Таблица roles
+**Таблица **
 
 	1.	Создать таблицу roles- id. Serial  primary key,- role_name. int, not null, unique
 	2.	Поменять тип столба role_name с int на varchar(30)
 	3.	Наполнить таблицу roles 20 строками:
 
-id	role_name
-1	Junior Python developer
-2	Middle Python developer
-3	Senior Python developer
-4	Junior Java developer
-5	Middle Java developer
-6	Senior Java developer
-7	Junior JavaScript developer
-8	Middle JavaScript developer
-9	Senior JavaScript developer
-10	Junior Manual QA engineer
-11	Middle Manual QA engineer
-12	Senior Manual QA engineer
-13	Project Manager
-14	Designer
-15	HR
-16	CEO
-17	Sales manager
-18	Junior Automation QA engineer
-19	Middle Automation QA engineer
-20	Senior Automation QA engineer
+|id|	role_nameJunior Python developer|
+|2|	Middle Python developer|
+|3|	Senior Python developer|
+|4|	Junior Java developer|
+|5|	Middle Java developer|
+|6|	Senior Java developer|
+|7|	Junior JavaScript developer|
+|8|	Middle JavaScript developer|
+|9|	Senior JavaScript developer|
+|10|	Junior Manual QA engineer|
+11|	Middle Manual QA engineer|
+12|	Senior Manual QA engineer|
+13|	Project Manager|
+14|	Designer|
+15|	HR|
+16|	CEO|
+17|	Sales manager|
+18|	Junior Automation QA engineer|
+19|	Middle Automation QA engineer|
+20|	Senior Automation QA engineer|
 
 create table roles(
         id serial primary key,
@@ -276,54 +250,6 @@ insert into roles (id,role_name) values
             (18,'Junior Automation QA engineer'),
             (19,'Middle Automation QA engineer'),
             (20,'Senior Automation QA engineer');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Таблица roles_employee
-
-	1.	Создать таблицу roles_employee- id. Serial  primary key,- employee_id. Int, not null, unique (внешний ключ для таблицы employees, поле id)
-- role_id. Int, not null (внешний ключ для таблицы roles, поле id)
-	1.	Наполнить таблицу roles_employee40 строками:
-
-id	employee_id	role_id
-1	7	2
-2	20	4
-3	3	9
-4	5	13
-5	23	4
-6	11	2
-7	10	9
-8	22	13
-9	21	3
-10	34	4
-11	6	7
-...	...	...
-
-create table roles_employee(
-	id serial  primary key,
-	employee_id int not null unique,
-	role_id int not null,
-	foreign key (employee_id)
-		references employees(id),
-	foreign key (role_id)
-		references roles(id)
 
 
 insert into roles_employee (id, employee_id, role_id) values
@@ -368,5 +294,19 @@ insert into roles_employee (id, employee_id, role_id) values
            (39,49,2),
            (40,33,20);
         
-   select * from roles_employee;        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
