@@ -6,14 +6,14 @@ SQL_DDLПервая часть.
 
 **Таблица employees**
 
-	1.	Создать таблицу employees- id. serial,  primary key,- employee_name. Varchar(50), not null
-	2.	Наполнить таблицу employee 70 строками.
+	1.	Создать таблицу employees- id. serial,  primary key,- employee_name. Varchar(50), not null  
+	2.	Наполнить таблицу employee 70 строками  
 
 
-create table employees (
-		id serial primary key,
-		employee_name varchar(50) not null
-	);
+create table employees (  
+		id serial primary key,  
+		employee_name varchar(50) not null  
+	);  
 	
 insert into employees (id, employee_name) values 
 	(1, 'Anna'),
