@@ -128,7 +128,7 @@ insert into salary (id, monthly_salary) values
 
 | id |  employee_id  |  salary_id  |
 |----|---------------|-------------|
-1	3	7
+1|	3|	7|
 2	1	4
 3	5	9
 4	40	13
