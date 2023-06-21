@@ -193,7 +193,7 @@ insert into employee_salary(id,employee_id,salary_id) values
 	         (38,56,67);
 
 
-**Таблица **
+**Таблица roles**
 
 	1.	Создать таблицу roles- id. Serial  primary key,- role_name. int, not null, unique
 	2.	Поменять тип столба role_name с int на varchar(30)
