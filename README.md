@@ -93,7 +93,7 @@ SQL_DDLПервая часть.
 	1.	Создать таблицу salary- id. Serial  primary key,- monthly_salary. Int, not null
 	2.	Наполнить таблицу salary 16 строками:- 1000- 1100- 1200- 1300- 1400- 1500- 1600- 1700- 1800- 1900- 2000- 2100- 2200- 2300- 2400- 2500
 
-
+```
 create table salary(
          id serial primary key,
           int not null       
@@ -117,7 +117,7 @@ insert into salary (id, monthly_salary) values
    (15,2400),
    (16,2500);
 
-
+```
 
 **Таблица employee_salary**
 
