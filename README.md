@@ -436,7 +436,159 @@ select id, name, created_on from students order by created_on ASC;
 select id, name, created_on from students order by created_on DESC;
 ```
 
+## SQL HomeWork 2. Joins
 
+Подключится к 
+Host: 159.69.151.133
+Port: 5056
+DB: подключение к той таблице где делали DDL операции
+User: подключение к тем пользователем каким делали DDL операции
+Pass: 123
+
+Если для какого-то кейса надо сделать дополнительную таблицу, наполнить её данными, то делайте )
+
+ 1. Вывести всех работников ,чьи зарплаты есть в базе, вместе с зарплатами
+```
+select employee_name as "Имя работника", 
+       monthly_salary as "Зарплата работника" 
+from employee_salary
+Inner join employees on employees.id = employee_salary.employee_id
+Inner join salary on salary.id = employee_salary.salary_id;
+```
+
+ 2. Вывести всех работников, у которых ЗП меньше 2000
+```
+select employee_name as "Имя работника"
+from employee_salary
+inner join employees on employees.id = employee_salary.employee_id
+inner join salary on salary.id = employee_salary.salary_id
+where salary.id < 2000;
+```
+
+ 3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
+```
+select monthly_salary as "Зарплата"
+from salary
+left join employee_salary on employee_salary.salary_id = salary.monthly_salary
+	where employee_id is null;
+```
+
+ 4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен (ЗП есть, но не понятно кто её получает.)
+```
+select monthly_salary as "Зарплата"
+from salary
+left join employee_salary on employee_salary.salary_id = salary.monthly_salary
+	where employee_id is null and monthly_salary < 2000;
+```
+
+ 5. Найти всех работников кому не начислена ЗП
+```
+select employee_name as "Все работники" from employees 
+left join employee_salary on employee_salary.employee_id = employees.id
+where employee_salary.salary_id is null
+```
+
+ 6. Вывести всех работников с названиями их должности
+```
+select employee_name as "Имя работника", role_name as "Название должности"
+from roles_employee
+inner join employees on roles_employee.employee_id = employees.id
+inner join roles on roles_employee.role_id = roles.id
+```
+
+ 7. Вывести имена и должность только Java разработчиков
+```
+select employee_name as "Имя", 
+role_name as "Должность Java разработчиков" 
+from roles_employee
+inner join employees on roles_employee.employee_id = employees.id
+inner join roles on roles_employee.role_id = roles.id
+where role_name like '%JavaScript developer'
+```
+
+ 8. Вывести имена и должность только Python разработчиков
+```
+select employee_name as "Имена", 
+role_name as "Должность Python разработчиков" 
+from roles_employee
+inner join employees on roles_employee.employee_id = employees.id
+inner join roles on roles_employee.role_id = roles.id
+where role_name like '%Python%'
+```
+
+ 9. Вывести имена и должность всех QA инженеров
+```
+select employee_name as "Имена", 
+role_name as "Должность всех QA инженеров" 
+from roles_employee
+inner join employees on roles_employee.employee_id = employees.id
+inner join roles on roles_employee.role_id = roles.id
+where role_name like '%QA%'
+```
+
+ 10. Вывести имена и должность ручных QA инженеров
+```
+select employee_name as "Имена", 
+role_name as "Должность ручных QA инженеров" 
+from roles_employee
+inner join employees on roles_employee.employee_id = employees.id
+inner join roles on roles_employee.role_id = roles.id
+where role_name like '%Manual%QA%'
+```
+
+ 11. Вывести имена и должность автоматизаторов QA
+```
+select employee_name as "Имена", 
+role_name as "Должность автоматизаторов QA" 
+from roles_employee
+inner join employees on roles_employee.employee_id = employees.id
+inner join roles on roles_employee.role_id = roles.id
+where role_name like '%Automation%QA%'
+```
+
+ 12. Вывести имена и зарплаты Junior специалистов
+```
+select employee_name as "Имена", monthly_salary as "Зарплаты Junior специалистов"
+from employees 
+inner join employee_salary on employees.id = employee_salary.employee_id
+inner join salary on employee_salary.salary_id = salary.id 
+inner join roles_employee on employees.id = roles_employee.employee_id 
+inner join roles on roles_employee.role_id = roles.id
+where role_name like '%Junior%';
+```
+
+
+ 13. Вывести имена и зарплаты Middle специалистов
+```
+select employee_name as "Имена", monthly_salary as "Зарплаты Middle специалистов"
+from employees
+inner join employee_salary on employees.id = employee_salary.employee_id
+inner join salary on employee_salary.salary_id = salary.id
+inner join roles_employee on employees.id = roles_employee.employee_id 
+inner join roles on roles_employee.role_id = roles.id 
+where role_name like '%Middle%'
+```
+
+ 14. Вывести имена и зарплаты Senior специалистов
+```
+select employee_name as "Имена", monthly_salary as "Зарплаты Senior специалистов"
+from employees
+inner join employee_salary on employees.id = employee_salary.employee_id
+inner join salary on employee_salary.salary_id = salary.id
+inner join roles_employee on employees.id = roles_employee.employee_id 
+inner join roles on roles_employee.role_id = roles.id 
+where role_name like '%Senior%'
+```
+
+ 15. Вывести зарплаты Java разработчиков
+```
+select monthly_salary as "Зарплаты Java разработчиков" from employees 
+join employee_salary on employees.id = employee_salary.salary_id
+join salary on employee_salary.salary_id = salary.id 
+join roles_employee on employees.id = roles_employee.employee_id
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%Java%'
+```
 
 
 
